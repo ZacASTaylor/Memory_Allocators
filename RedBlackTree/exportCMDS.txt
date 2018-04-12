@@ -1,0 +1,11 @@
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/admin/Documents/09042018/rbtree/libmy_malloc_i686.so
+export LD_LIBRARY_PATH
+gcc -o test tester.c -L/home/admin/Documents/09042018/rbtree -lmy_malloc_i686
+
+
+
+
+for i in `seq 1 100`; do ./test 10 1 >> outputTime10.txt; done
+
+
+/home/admin/Documents/09042018/properResults/rbtree
