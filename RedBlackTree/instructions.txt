@@ -1,3 +1,17 @@
-LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/alex/Downloads/properResults/rbtree/libmy_malloc_x86_64.so
+Set library path:
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:[directory to .so file]/name_of_so_file.so
+
+Export library path:
 export LD_LIBRARY_PATH
-gcc -o test tester.c -L/home/alex/Downloads/properResults/rbtree/ -lmy_malloc_x86_64
+
+Compile
+gcc -o tester tester.c -L[directory to .so file] -l[name of .so file without lib]
+
+Example:
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/admin/dir1/dir2/rbtree/libmy_malloc_i686.so
+export LD_LIBRARY_PATH
+gcc -o tester tester.c -L/home/admin/dir1/dir2/rbtree -lmy_malloc_i686
+
+Run with "./tester [number of allocations] ['1' to print elapsed time, '2' to print operations per second, '3' to print seconds per operation]
+
+Example: "./tester 10000 1"
