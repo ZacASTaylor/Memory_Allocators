@@ -31,8 +31,6 @@ void shuffle(int *array, int n) {
 	}
 }
 
-
-
 struct timespec m_start, m_end;
 
 void setTimer(struct timespec* timer) {
@@ -56,17 +54,13 @@ double calculateElapsedTime()  {
 	return time_msec;
 }
 
-
 int main(int argc, char *argv[])
 {
 	void * my_block = malloc(MALLOC_SIZE); // For host system demonstration, alloc 4MB block
 
-
-
 	//Initialize our simple freelist with the space.
 	//On our embedded platform, this will be the RAM address for your pool and the size you desire.
 	 malloc_addblock(my_block, MALLOC_SIZE);
-	
 
 
 	int sizes[] = { 32, 64, 256, 512, 1024, 2048, 4096 };
@@ -83,12 +77,10 @@ int main(int argc, char *argv[])
 
 	memoryPeak = 0;
 
-
 	srand(time(NULL));
 	int r, s;
 	void * q[nOperations];
 	void * t[nOperations/2];
-
 
 	int rand_array[nOperations];
 
@@ -123,7 +115,6 @@ int main(int argc, char *argv[])
 	opsPerSec = nOperations / elapsedTime;
 	timePerOp = elapsedTime / nOperations;
 
-
 		if(atoi(argv[2]) == 1){
  			fprintf(stdout, "%lf\n", elapsedTime);  
 		}
@@ -136,8 +127,6 @@ int main(int argc, char *argv[])
 
 
 	memoryPeak = 0;
-
-
 
 	free(my_block);
 }
