@@ -75,12 +75,6 @@ int main(int argc, char *argv[])
 	long nOperations;
 	nOperations = atoi(argv[1]);
 
-	// int sizeof_rbnode = sizeof(t_rbnode);
-	// int sizeof_smalloc = sizeof(t_malloc);
-	
-
-
-
 	void * p[N][nOperations];
 
 	float opsPerSec;
@@ -113,7 +107,6 @@ int main(int argc, char *argv[])
 
 		q[j] = fl_malloc(randomByteSize);
 		memoryPeak += sizeof(ll_t);
-		//memoryPeak += sizeof_rbnode;
 		randomByteSize = rand()%1024 + 1;
 		r = rand() % 7;
 	}
@@ -121,18 +114,8 @@ int main(int argc, char *argv[])
 	{
 
 		fl_free(q[rand_array[j]]);
-		//s = rand() % nOperations/2;
 	}
-	// randomByteSize = rand()%1024 + 1;
-	// for (int j=0; j<nOperations/2; j++)
-	// {
 
-	// 	t[j] = fl_malloc(randomByteSize);
-	// 	memoryPeak += randomByteSize;
-	// 	//memoryPeak += sizeof_rbnode;
-	// 	randomByteSize = rand()%4096 + 1;
-	// 	r = rand() % 7;
-	// }
 	setTimer(&m_end);
 
 	double elapsedTime;
