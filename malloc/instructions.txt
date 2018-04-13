@@ -1,0 +1,5 @@
+Compile with "make"
+
+Run with "./test [number of allocations] ['1' to print elapsed time, '2' to print operations per second, '3' to print seconds per operation]
+
+Example: "./tester 10000 1"
